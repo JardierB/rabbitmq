@@ -1,6 +1,8 @@
 package com.producers.configs;
 
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,4 +30,10 @@ public class RabbitMQConfig {
                 .to(directExchange())
                 .with(RK_PRODUCT_LOG);
     }
+
+    @Bean
+    public MessageConverter messageConverter() {
+        return new JacksonJsonMessageConverter();
+    }
+
 }
