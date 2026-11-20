@@ -2,6 +2,7 @@ package com.commons.dtos;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Getter
@@ -9,7 +10,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductDTO {
+@ToString
+public class ProductDTO implements Serializable {
 
     private Integer id;
     private String name;
